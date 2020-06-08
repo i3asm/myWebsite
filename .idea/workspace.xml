@@ -2,24 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a694f1d-c8a4-4813-8c45-871b4f1b3ba5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/home/icons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/home/images/_image02.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/home/images/image02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/home/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/home/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/home/noscript.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/myWebsiteDjango.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/myWebsiteDjango.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home3.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home4.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/myWebsiteDjango/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myWebsiteDjango/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/home/images/_image02.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/home/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/home/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/home/noscript.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/noscript.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +55,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1cj8bjaUr7vCCV99FRyhLcigBIF" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -74,18 +74,19 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/home/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/home/templates" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/myWebsiteDjango" />
       <recent name="$PROJECT_DIR$/home/templates/home" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/home/templates" />
     </key>
   </component>
   <component name="RunManager">
@@ -128,6 +129,9 @@
       <workItem from="1591245619108" duration="1860000" />
       <workItem from="1591295765480" duration="7895000" />
       <workItem from="1591549860995" duration="2513000" />
+      <workItem from="1591555398385" duration="4593000" />
+      <workItem from="1591563171290" duration="720000" />
+      <workItem from="1591625932982" duration="1189000" />
     </task>
     <servers />
   </component>
@@ -139,38 +143,42 @@
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
     <state x="1506" y="189" width="804" height="667" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1080@0.0.2560.1080" timestamp="1591245645682" />
+    <state x="253" y="37" width="854" height="972" key="CommitChangelistDialog2" timestamp="1591627324082">
+      <screen x="0" y="0" width="2560" height="1080" />
+    </state>
+    <state x="253" y="37" width="854" height="972" key="CommitChangelistDialog2/0.0.2560.1080@0.0.2560.1080" timestamp="1591627324082" />
     <state x="428" y="286" width="428" height="474" key="FileChooserDialogImpl" timestamp="1591294467928">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
     <state x="428" y="286" width="428" height="474" key="FileChooserDialogImpl/0.0.2560.1080@0.0.2560.1080" timestamp="1591294467928" />
-    <state width="1280" height="200" key="GridCell.Tab.0.bottom" timestamp="1591552619754">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1280" height="200" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1591552619754" />
-    <state width="1246" height="268" key="GridCell.Tab.0.bottom/0.0.2560.1080@0.0.2560.1080" timestamp="1591306401177" />
-    <state width="1280" height="200" key="GridCell.Tab.0.center" timestamp="1591552619750">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1280" height="200" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1591552619750" />
-    <state width="1246" height="268" key="GridCell.Tab.0.center/0.0.2560.1080@0.0.2560.1080" timestamp="1591306401177" />
-    <state width="1280" height="200" key="GridCell.Tab.0.left" timestamp="1591552619747">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1280" height="200" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1591552619747" />
-    <state width="1246" height="268" key="GridCell.Tab.0.left/0.0.2560.1080@0.0.2560.1080" timestamp="1591306401176" />
-    <state width="1280" height="200" key="GridCell.Tab.0.right" timestamp="1591552619752">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1280" height="200" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1591552619752" />
-    <state width="1246" height="268" key="GridCell.Tab.0.right/0.0.2560.1080@0.0.2560.1080" timestamp="1591306401177" />
-    <state x="149" y="39" key="SettingsEditor" timestamp="1591551530574">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="149" y="39" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1591551530574" />
-    <state x="132" y="-16" key="SettingsEditor/0.0.2560.1080@0.0.2560.1080" timestamp="1591306000763" />
-    <state x="310" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1591306032701">
+    <state width="1246" height="249" key="GridCell.Tab.0.bottom" timestamp="1591567151740">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state x="310" y="259" width="672" height="678" key="search.everywhere.popup/0.0.2560.1080@0.0.2560.1080" timestamp="1591306032701" />
+    <state width="1280" height="200" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1591552619754" />
+    <state width="1246" height="249" key="GridCell.Tab.0.bottom/0.0.2560.1080@0.0.2560.1080" timestamp="1591567151740" />
+    <state width="1246" height="249" key="GridCell.Tab.0.center" timestamp="1591567151740">
+      <screen x="0" y="0" width="2560" height="1080" />
+    </state>
+    <state width="1280" height="200" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1591552619750" />
+    <state width="1246" height="249" key="GridCell.Tab.0.center/0.0.2560.1080@0.0.2560.1080" timestamp="1591567151740" />
+    <state width="1246" height="249" key="GridCell.Tab.0.left" timestamp="1591567151740">
+      <screen x="0" y="0" width="2560" height="1080" />
+    </state>
+    <state width="1280" height="200" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1591552619747" />
+    <state width="1246" height="249" key="GridCell.Tab.0.left/0.0.2560.1080@0.0.2560.1080" timestamp="1591567151740" />
+    <state width="1246" height="249" key="GridCell.Tab.0.right" timestamp="1591567151740">
+      <screen x="0" y="0" width="2560" height="1080" />
+    </state>
+    <state width="1280" height="200" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1591552619752" />
+    <state width="1246" height="249" key="GridCell.Tab.0.right/0.0.2560.1080@0.0.2560.1080" timestamp="1591567151740" />
+    <state x="296" y="35" key="SettingsEditor" timestamp="1591555440197">
+      <screen x="0" y="0" width="2560" height="1080" />
+    </state>
+    <state x="149" y="39" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1591551530574" />
+    <state x="296" y="35" key="SettingsEditor/0.0.2560.1080@0.0.2560.1080" timestamp="1591555440197" />
+    <state x="310" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1591626782406">
+      <screen x="0" y="0" width="2560" height="1080" />
+    </state>
+    <state x="310" y="259" width="672" height="678" key="search.everywhere.popup/0.0.2560.1080@0.0.2560.1080" timestamp="1591626782406" />
   </component>
 </project>

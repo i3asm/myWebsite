@@ -42,7 +42,7 @@ body:after {
 	filter: none !important;
 }
 
-#main > .inner > section > * {
+#main > .inner > * {
 	opacity: 1.0 !important;
 	-moz-transform: none !important;
 	-webkit-transform: none !important;

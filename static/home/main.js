@@ -302,144 +302,20 @@
 			}, 100);
 		});
 	
-	// Sections.
+	// Scroll points.
 		(function() {
-	
-			var initialSection, initialScrollPoint, initialId,
-				header, footer, name, hideHeader, hideFooter,
-				h, e, ee, k,
-				locked = false,
-				doNext = function() {
-	
-					var section;
-	
-					section = $('#main > .inner > section.active').nextElementSibling;
-	
-					if (!section || section.tagName != 'SECTION')
-						return;
-	
-					location.href = '#' + section.id.replace(/-section$/, '');
-	
-				},
-				doPrevious = function() {
-	
-					var section;
-	
-					section = $('#main > .inner > section.active').previousElementSibling;
-	
-					if (!section || section.tagName != 'SECTION')
-						return;
-	
-					location.href = '#' + (section.matches(':first-child') ? '' : section.id.replace(/-section$/, ''));
-	
-				},
-				doFirst = function() {
-	
-					var section;
-	
-					section = $('#main > .inner > section:first-of-type');
-	
-					if (!section || section.tagName != 'SECTION')
-						return;
-	
-					location.href = '#' + section.id.replace(/-section$/, '');
-	
-				},
-				doLast = function() {
-	
-					var section;
-	
-					section = $('#main > .inner > section:last-of-type');
-	
-					if (!section || section.tagName != 'SECTION')
-						return;
-	
-					location.href = '#' + section.id.replace(/-section$/, '');
-	
-				},
-				loadElements = function(parent) {
-	
-					var a, i;
-	
-					// IFRAMEs.
-	
-						// Get list of unloaded IFRAMEs.
-							a = parent.querySelectorAll('iframe[data-src]:not([data-src=""])');
-	
-						// Step through list.
-							for (i=0; i < a.length; i++) {
-	
-								// Load.
-									a[i].src = a[i].dataset.src;
-	
-								// Mark as loaded.
-									a[i].dataset.src = "";
-	
-							}
-	
-				},
-				unloadElements = function(parent) {
-	
-					var a, i;
-	
-					// IFRAMEs.
-	
-						// Get list of loaded IFRAMEs.
-							a = parent.querySelectorAll('iframe[data-src=""]');
-	
-						// Step through list.
-							for (i=0; i < a.length; i++) {
-	
-								// Mark as unloaded.
-									a[i].dataset.src = a[i].src;
-	
-								// Unload.
-									a[i].src = '';
-	
-							}
-	
-					// Video.
-	
-						// Get list of videos.
-							a = parent.querySelectorAll('video');
-	
-						// Step through list.
-							for (i=0; i < a.length; i++) {
-	
-								// Pause.
-									a[i].pause();
-	
-							}
-	
-				},
-				sections = {};
-	
-			// Expose doNext, doPrevious, doFirst, doLast.
-				window._next = doNext;
-				window._previous = doPrevious;
-				window._first = doFirst;
-				window._last = doLast;
 	
 			// Override exposed scrollToTop.
 				window._scrollToTop = function() {
 	
-					var section, id;
-	
 					// Scroll to top.
 						scrollToElement(null);
 	
-					// Section active?
-						if (!!(section = $('section.active'))) {
+					// Scroll point active?
+						if (window.location.hash) {
 	
-							// Get name.
-								id = section.id.replace(/-section$/, '');
-	
-								// Index section? Clear.
-									if (id == 'home')
-										id = '';
-	
-							// Reset hash to section name (via new state).
-								history.pushState(null, null, '#' + id);
+							// Reset hash (via new state).
+								history.pushState(null, null, '.');
 	
 						}
 	
@@ -451,98 +327,24 @@
 					if ('scrollRestoration' in history)
 						history.scrollRestoration = 'manual';
 	
-				// Header, footer.
-					header = $('#header');
-					footer = $('#footer');
-	
-				// Show initial section.
-	
-					// Determine target.
-						h = thisHash();
-	
-						// Contains invalid characters? Might be a third-party hashbang, so ignore it.
-							if (h
-							&&	!h.match(/^[a-zA-Z0-9\-]+$/))
-								h = null;
-	
-						// Scroll point.
-							if (e = $('[data-scroll-id="' + h + '"]')) {
-	
-								initialScrollPoint = e;
-								initialSection = initialScrollPoint.parentElement;
-								initialId = initialSection.id;
-	
-							}
-	
-						// Section.
-							else if (e = $('#' + (h ? h : 'home') + '-section')) {
-	
-								initialScrollPoint = null;
-								initialSection = e;
-								initialId = initialSection.id;
-	
-							}
-	
-						// Missing initial section?
-							if (!initialSection) {
-	
-								// Default to index.
-									initialScrollPoint = null;
-									initialSection = $('#' + 'home' + '-section');
-									initialId = initialSection.id;
-	
-								// Clear index URL hash.
-									history.replaceState(undefined, undefined, '#');
-	
-							}
-	
-					// Deactivate all sections (except initial).
-	
-						// Initially hide header and/or footer (if necessary).
-							name = (h ? h : 'home');
-							hideHeader = name ? ((name in sections) && ('hideHeader' in sections[name]) && sections[name].hideHeader) : false;
-							hideFooter = name ? ((name in sections) && ('hideFooter' in sections[name]) && sections[name].hideFooter) : false;
-	
-							// Header.
-								if (header && hideHeader) {
-	
-									header.classList.add('hidden');
-									header.style.display = 'none';
-	
-								}
-	
-							// Footer.
-								if (footer && hideFooter) {
-	
-									footer.classList.add('hidden');
-									footer.style.display = 'none';
-	
-								}
-	
-						// Deactivate.
-							ee = $$('#main > .inner > section:not([id="' + initialId + '"])');
-	
-							for (k = 0; k < ee.length; k++) {
-	
-								ee[k].className = 'inactive';
-								ee[k].style.display = 'none';
-	
-							}
-	
-					// Activate initial section.
-						initialSection.classList.add('active');
-	
-					// Load elements.
-						loadElements(initialSection);
-	
-				 	// Scroll to top.
-						scrollToElement(null, 'instant');
-	
 				// Load event.
 					on('load', function() {
 	
-						// Scroll to initial scroll point (if applicable).
-					 		if (initialScrollPoint)
+						var initialScrollPoint, h;
+	
+						// Determine target.
+							h = thisHash();
+	
+							// Contains invalid characters? Might be a third-party hashbang, so ignore it.
+								if (h
+								&&	!h.match(/^[a-zA-Z0-9\-]+$/))
+									h = null;
+	
+							// Scroll point.
+								initialScrollPoint = $('[data-scroll-id="' + h + '"]');
+	
+						// Scroll to scroll point (if applicable).
+							if (initialScrollPoint)
 								scrollToElement(initialScrollPoint, 'instant');
 	
 					});
@@ -550,13 +352,7 @@
 			// Hashchange event.
 				on('hashchange', function(event) {
 	
-					var section, scrollPoint, id, sectionHeight, currentSection, currentSectionHeight,
-						name, hideHeader, hideFooter,
-						h, e, ee, k;
-	
-					// Lock.
-						if (locked)
-							return false;
+					var scrollPoint, h, pos;
 	
 					// Determine target.
 						h = thisHash();
@@ -567,220 +363,18 @@
 								return false;
 	
 						// Scroll point.
-							if (e = $('[data-scroll-id="' + h + '"]')) {
+							scrollPoint = $('[data-scroll-id="' + h + '"]');
 	
-								scrollPoint = e;
-								section = scrollPoint.parentElement;
-								id = section.id;
+					// Scroll to scroll point (if applicable).
+						if (scrollPoint)
+							scrollToElement(scrollPoint);
 	
-							}
+					// Otherwise, just scroll to top.
+						else
+							scrollToElement(null);
 	
-						// Section.
-							else if (e = $('#' + (h ? h : 'home') + '-section')) {
-	
-								scrollPoint = null;
-								section = e;
-								id = section.id;
-	
-							}
-	
-						// Anything else.
-							else {
-	
-								// Default to index.
-									scrollPoint = null;
-									section = $('#' + 'home' + '-section');
-									id = section.id;
-	
-								// Clear index URL hash.
-									history.replaceState(undefined, undefined, '#');
-	
-							}
-	
-					// No section? Bail.
-						if (!section)
-							return false;
-	
-					// Section already active?
-						if (!section.classList.contains('inactive')) {
-	
-						 	// Scroll to scroll point (if applicable).
-						 		if (scrollPoint)
-									scrollToElement(scrollPoint);
-	
-							// Otherwise, just scroll to top.
-								else
-									scrollToElement(null);
-	
-							// Bail.
-								return false;
-	
-						}
-	
-					// Otherwise, activate it.
-						else {
-	
-							// Lock.
-								locked = true;
-	
-							// Clear index URL hash.
-								if (location.hash == '#home')
-									history.replaceState(null, null, '#');
-	
-							// Deactivate current section.
-	
-								// Hide header and/or footer (if necessary).
-									name = (section ? section.id.replace(/-section$/, '') : null);
-									hideHeader = name ? ((name in sections) && ('hideHeader' in sections[name]) && sections[name].hideHeader) : false;
-									hideFooter = name ? ((name in sections) && ('hideFooter' in sections[name]) && sections[name].hideFooter) : false;
-	
-									// Header.
-										if (header && hideHeader) {
-	
-											header.classList.add('hidden');
-	
-											setTimeout(function() {
-												header.style.display = 'none';
-											}, 250);
-	
-										}
-	
-									// Footer.
-										if (footer && hideFooter) {
-	
-											footer.classList.add('hidden');
-	
-											setTimeout(function() {
-												footer.style.display = 'none';
-											}, 250);
-	
-										}
-	
-								// Deactivate.
-									currentSection = $('#main > .inner > section:not(.inactive)');
-	
-									if (currentSection) {
-	
-										// Get current height.
-											currentSectionHeight = currentSection.offsetHeight;
-	
-										// Deactivate.
-											currentSection.classList.add('inactive');
-	
-										// Unload elements.
-											unloadElements(currentSection);
-	
-										// Hide.
-											setTimeout(function() {
-												currentSection.style.display = 'none';
-												currentSection.classList.remove('active');
-											}, 250);
-	
-									}
-	
-							// Activate target section.
-								setTimeout(function() {
-	
-									// Show header and/or footer (if necessary).
-	
-										// Header.
-											if (header && !hideHeader) {
-	
-												header.style.display = '';
-	
-												setTimeout(function() {
-													header.classList.remove('hidden');
-												}, 0);
-	
-											}
-	
-										// Footer.
-											if (footer && !hideFooter) {
-	
-												footer.style.display = '';
-	
-												setTimeout(function() {
-													footer.classList.remove('hidden');
-												}, 0);
-	
-											}
-	
-									// Activate.
-	
-										// Show.
-											section.style.display = '';
-	
-										// Trigger 'resize' event.
-											trigger('resize');
-	
-										// Scroll to top.
-											scrollToElement(null, 'instant');
-	
-										// Get target height.
-											sectionHeight = section.offsetHeight;
-	
-										// Set target heights.
-											if (sectionHeight > currentSectionHeight) {
-	
-												section.style.maxHeight = currentSectionHeight + 'px';
-												section.style.minHeight = '0';
-	
-											}
-											else {
-	
-												section.style.maxHeight = '';
-												section.style.minHeight = currentSectionHeight + 'px';
-	
-											}
-	
-										// Delay.
-											setTimeout(function() {
-	
-												// Activate.
-													section.classList.remove('inactive');
-													section.classList.add('active');
-	
-												// Temporarily restore target heights.
-													section.style.minHeight = sectionHeight + 'px';
-													section.style.maxHeight = sectionHeight + 'px';
-	
-												// Delay.
-													setTimeout(function() {
-	
-														// Turn off transitions.
-															section.style.transition = 'none';
-	
-														// Clear target heights.
-															section.style.minHeight = '';
-															section.style.maxHeight = '';
-	
-														// Load elements.
-															loadElements(section);
-	
-													 	// Scroll to scroll point (if applicable).
-													 		if (scrollPoint)
-																scrollToElement(scrollPoint, 'instant');
-	
-														// Delay.
-															setTimeout(function() {
-	
-																// Turn on transitions.
-																	section.style.transition = '';
-	
-																// Unlock.
-																	locked = false;
-	
-															}, 75);
-	
-													}, 500);
-	
-											}, 75);
-	
-								}, 250);
-	
-						}
-	
-					return false;
+					// Bail.
+						return false;
 	
 				});
 	
@@ -1218,114 +812,5 @@
 					})();
 	
 			}
-	
-	// Deferred.
-		(function() {
-	
-			var items = $$('.deferred'),
-				f;
-	
-			// Polyfill: NodeList.forEach()
-				if (!('forEach' in NodeList.prototype))
-					NodeList.prototype.forEach = Array.prototype.forEach;
-	
-			// Initialize items.
-				items.forEach(function(p) {
-	
-					var i = p.firstElementChild;
-	
-					// Set parent to placeholder.
-						p.style.backgroundImage = 'url(' + i.src + ')';
-						p.style.backgroundSize = '100% 100%';
-						p.style.backgroundPosition = 'top left';
-						p.style.backgroundRepeat = 'no-repeat';
-	
-					// Hide image.
-						i.style.opacity = 0;
-						i.style.transition = 'opacity 0.375s ease-in-out';
-	
-					// Load event.
-						i.addEventListener('load', function(event) {
-	
-							// Not "done" yet? Bail.
-								if (i.dataset.src !== 'done')
-									return;
-	
-							// Show image.
-								if (Date.now() - i._startLoad < 375) {
-	
-									p.classList.remove('loading');
-									p.style.backgroundImage = 'none';
-									i.style.transition = '';
-									i.style.opacity = 1;
-	
-								}
-								else {
-	
-									p.classList.remove('loading');
-									i.style.opacity = 1;
-	
-									setTimeout(function() {
-										p.style.backgroundImage = 'none';
-									}, 375);
-	
-								}
-	
-						});
-	
-				});
-	
-			// Handler function.
-				f = function() {
-	
-					var	height = document.documentElement.clientHeight,
-						top = (client.os == 'ios' ? document.body.scrollTop : document.documentElement.scrollTop),
-						bottom = top + height;
-	
-					// Step through items.
-						items.forEach(function(p) {
-	
-							var i = p.firstElementChild;
-	
-							// Not visible? Bail.
-								if (i.offsetParent === null)
-									return true;
-	
-							// "Done" already? Bail.
-								if (i.dataset.src === 'done')
-									return true;
-	
-							// Get image position.
-								var	x = i.getBoundingClientRect(),
-									imageTop = top + Math.floor(x.top) - height,
-									imageBottom = top + Math.ceil(x.bottom) + height,
-									src;
-	
-							// Falls within viewable area of viewport?
-								if (imageTop <= bottom && imageBottom >= top) {
-	
-									// Get src, mark as "done".
-										src = i.dataset.src;
-										i.dataset.src = 'done';
-	
-									// Mark parent as loading.
-										p.classList.add('loading');
-	
-									// Swap placeholder for real image src.
-										i._startLoad = Date.now();
-										i.src = src;
-	
-								}
-	
-						});
-	
-				};
-	
-			// Add event listeners.
-				on('load', f);
-				on('resize', f);
-				on('scroll', f);
-	
-		})();
 
 })();
