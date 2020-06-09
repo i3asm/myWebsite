@@ -4,6 +4,7 @@
     <list default="true" id="5a694f1d-c8a4-4813-8c45-871b4f1b3ba5" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/home/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html" afterDir="false" />
     </list>
@@ -127,7 +128,7 @@
       <workItem from="1591555398385" duration="4593000" />
       <workItem from="1591563171290" duration="720000" />
       <workItem from="1591625932982" duration="10438000" />
-      <workItem from="1591708788090" duration="2477000" />
+      <workItem from="1591708788090" duration="2734000" />
     </task>
     <task id="LOCAL-00001" summary="add: front end from carrd.co .&#10;&#10;what a beautiful design !">
       <created>1591627384982</created>
@@ -205,9 +206,9 @@
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
     <state x="22" y="546" width="1250" height="512" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1080@0.0.2560.1080" timestamp="1591636722331" />
-    <state x="310" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1591720432885">
+    <state x="310" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1591720546881">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state x="310" y="259" width="672" height="678" key="search.everywhere.popup/0.0.2560.1080@0.0.2560.1080" timestamp="1591720432885" />
+    <state x="310" y="259" width="672" height="678" key="search.everywhere.popup/0.0.2560.1080@0.0.2560.1080" timestamp="1591720546881" />
   </component>
 </project>
