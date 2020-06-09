@@ -40,33 +40,51 @@
             <h1 id="text04"><span>Hi, I make awesome</span><br/><span>stuff for the WWW</span></h1>
             <p id="text06">And i&#39;m the back-end web developer you <strong>need</strong> to hire.</p>
             <hr id="divider02">
+
+            {# About me #}
             <h3 id="text01" data-scroll-id="about" data-scroll-behavior="default" data-scroll-offset="0">About me</h3>
             <div id="image02" class="image">
                 <img src="{% static 'home/images/image02.jpg' %}" alt=""/>
             </div>
             <p id="text10">Back-end developer</p>
             <p id="text09">A computer science student in king saud university.</p>
-            <p id="text03"><span class="li">I started making websites as a self-challenge to learn Laravel. Then I fell in love with it!</span><span
-                    class="li">my first REAL website was for the SPP (Student Partnership Program) in the university. Check it out <a
-                    href="https://sppwebsite.herokuapp.com/">here</a> </span><span><span class="li">I work for <a
-                    href="https://nit.sa">Nibras capital</a> and it is amazing.</span></span></p>
+            <p id="text03">
+                <span class="li">I started making websites as a self-challenge to learn Laravel. Then I fell in love with it!</span>
+                <span class="li">my first REAL website was for the SPP (Student Partnership Program) in the university. Check it out
+                    <a target="_blank" href="https://sppwebsite.herokuapp.com/">here</a>
+                </span>
+                <span>
+                    <span class="li">I work for
+                        <a target="_blank" href="https://nit.sa">Nibras capital</a> and it is amazing.</span>
+                </span>
+            </p>
             <hr id="divider03">
+
+            {# projects #}
             <h3 id="text07" data-scroll-id="projects" data-scroll-behavior="default" data-scroll-offset="0">Projecrts I
                 made</h3>
-            <p id="text03"><span class="li">I started making</span><span
-                    class="li">my first REAL website</span><span><span class="li">I work for</span></span></p>
+            <p id="text03">
+                <span class="li">{%  %}</span>
+                <span class="li">my first REAL website</span>
+                <span class="li">I work for</span>
+            </p>
             <hr id="divider03">
-            <h3 id="text07" data-scroll-id="future" datsa-scroll-behavior="default" data-scroll-offset="0">Future plans</h3>
+
+            {# Future #}
+            <h3 id="text07" data-scroll-id="future" datsa-scroll-behavior="default" data-scroll-offset="0">Future
+                plans</h3>
             <p id="text02"><span class="li"><strong>I love python.</strong> currently I am learning django (python web framework) and this is how I made this website :)</span><span
                     class="li"><strong> Flutter</strong> what an amazing framework!</span><span><span
                     class="li"><strong>.NET</strong> C# is basically microsoft&#39;s java so no steep learning curve. and .NET can be used every where. I see a lot of job opportunities for it&#39;s developers so I may give it a shot.</span></span>
             </p>
             <hr id="divider01">
+
+            {# contact #}
             <h2 id="text05" data-scroll-id="contact" data-scroll-behavior="default" data-scroll-offset="0">Contact</h2>
-            <p id="text11">BTW I'm "i3asm" almost everywhere you search :)</p>
+            <p id="text09">i3asmmail@gmail.com</p>
             <ul id="icons01" class="icons">
                 <li>
-                    <a class="n01" href="https://www.linkedin.com/in/i3asm/">
+                    <a class="n01" target="_blank" href="https://www.linkedin.com/in/i3asm/">
                         <svg>
                             <use xlink:href="{% static 'home/icons.svg' %}#linkedin"></use>
                         </svg>
@@ -74,7 +92,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="n02" href="https://github.com/i3asm">
+                    <a class="n02" target="_blank" href="https://github.com/i3asm">
                         <svg>
                             <use xlink:href="{% static 'home/icons.svg' %}#github"></use>
                         </svg>
@@ -82,7 +100,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="n03" href="https://twitter.com/i3asmDev">
+                    <a class="n03" target="_blank" href="https://twitter.com/i3asmDev">
                         <svg>
                             <use xlink:href="{% static 'home/icons.svg' %}#twitter"></use>
                         </svg>
@@ -91,6 +109,7 @@
                 </li>
                 <li>
                     <a class="n04"
+                       target="_blank"
                        href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%69%33%61%73%6d%6d%61%69%6c%40%67%6d%61%69%6c%2e%63%6f%6d">
                         <svg>
                             <use xlink:href="{% static 'home/icons.svg' %}#email"></use>
@@ -99,7 +118,8 @@
                     </a>
                 </li>
             </ul>
-            <p id="text08">the front-end design is made by <a href="https://carrd.co">carrd.co</a></p>
+            <p id="text11">BTW I'm "i3asm" almost everywhere you search :)</p>
+            <p id="text08">the front-end design is made by <a target="_blank" href="https://carrd.co">carrd.co</a></p>
         </div>
     </div>
 </div>
