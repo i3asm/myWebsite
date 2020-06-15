@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'gk@*(i=50+^uykog&fzck_vfyyxwk(^-%009&^g#u##n@g@$8n'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -78,8 +80,13 @@ WSGI_APPLICATION = 'myWebsiteDjango.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'HOST':  secret_keys.database('DB_HOST'),
+        # 'NAME': secret_keys.database('DB_DATABASE'),
+        # 'PASSWORD': secret_keys.database('DB_PASSWORD'),
+        # 'PORT': secret_keys.database('DB_PORT'),
+        # 'USER': secret_keys.database('DB_USERNAME'),
+
     }
 }
 
@@ -124,3 +131,6 @@ STATIC_URL = '/static/'
 
 #Location of static files
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+
+# Configure Django App for Heroku.
+django_heroku.settings(locals())

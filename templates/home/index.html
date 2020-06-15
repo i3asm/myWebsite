@@ -64,18 +64,21 @@
             <h3 id="text07" data-scroll-id="projects" data-scroll-behavior="default" data-scroll-offset="0">Projecrts I
                 made</h3>
             <p id="text03">
-                <span class="li">{%  %}</span>
-                <span class="li">my first REAL website</span>
-                <span class="li">I work for</span>
+                {% for repo in repos %}
+                    <span class="li"><strong><a
+                            href="https://github.com/i3asm/{{ repo.name }}">{{ repo.name }}</a>:</strong> {{ repo.description }}</span>
+                {% endfor %}
             </p>
             <hr id="divider03">
 
             {# Future #}
             <h3 id="text07" data-scroll-id="future" datsa-scroll-behavior="default" data-scroll-offset="0">Future
                 plans</h3>
-            <p id="text02"><span class="li"><strong>I love python.</strong> currently I am learning django (python web framework) and this is how I made this website :)</span><span
-                    class="li"><strong> Flutter</strong> what an amazing framework!</span><span><span
-                    class="li"><strong>.NET</strong> C# is basically microsoft&#39;s java so no steep learning curve. and .NET can be used every where. I see a lot of job opportunities for it&#39;s developers so I may give it a shot.</span></span>
+            <p id="text02">
+                <span class="li"><strong>I love python.</strong> currently I am learning django (python web framework) and this is how I made this website :)</span>
+                <span class="li"><strong> Data science </strong>I find this field really interesting. especially with my python background and good understanding of basic statistics and math</span>
+                <span class="li"><strong> Flutter</strong> what an amazing framework!</span>
+                <span class="li"><strong>.NET</strong> C# is similar to java so there is no steep learning curve for me. and .NET can be used every where. I see a lot of job opportunities for it&#39;s developers so I may give it a shot.</span>
             </p>
             <hr id="divider01">
 
@@ -119,7 +122,7 @@
                 </li>
             </ul>
             <p id="text11">BTW I'm "i3asm" almost everywhere you search :)</p>
-            <p id="text08">the front-end design is made by <a target="_blank" href="https://carrd.co">carrd.co</a></p>
+            <p id="text08">I made the front-end design is made by <a target="_blank" href="https://carrd.co">carrd.co</a>. it's easy and maybe I will use it everywhere in the future</p>
         </div>
     </div>
 </div>

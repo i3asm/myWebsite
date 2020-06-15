@@ -1,15 +1,12 @@
 from django.db import models
 from github import Github
-from django.http import HttpResponse, HttpResponseNotFound
-from django.conf import settings
-from getenv import env
+from django.http import HttpResponse
+from os import getenv
+
 
 # Create your models here.
 
-g = Github(env("GITHUB"))
-for repo in g.get_user('i3asm').get_repos():
-    print(repo.name)
-
+print(getenv('GITHUB'))
 
 class Project(models.Model):
     name = models.TextField()
@@ -24,6 +21,6 @@ class Project(models.Model):
 
     @classmethod
     def foo(cls):
-        g = Github(settings("GITHUB"))
+        g = Github()
         for repo in g.get_user().get_repos():
             return HttpResponse("<h1> " + repo.name + " </h1>")
